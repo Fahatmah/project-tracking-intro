@@ -1,0 +1,128 @@
+@use '../abstract' as *;
+
+.col-1 {
+  width: calc(100% - 3.4rem);
+  margin-inline: auto;
+
+  .header__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-block-end: 5rem;
+
+    .dashboard__text {
+      @include center;
+      justify-content: flex-start;
+      gap: 1rem;
+
+      .new {
+        background-color: var(--n-clr-400);
+        padding: 0.2rem 0.8rem;
+        border-radius: 1rem;
+      }
+
+      p {
+        letter-spacing: 4px;
+      }
+    }
+
+    .heading {
+      font-size: clamp(2.65rem, 2.2451rem + 1.7277vw, 3.8rem);
+      width: 100%;
+      max-width: 32rem;
+      line-height: 1;
+    }
+
+    .paragraph {
+      font-size: calc(0.07rem + var(--fs-body));
+      width: 18rem;
+      line-height: 1.4;
+    }
+
+    .schedule__container {
+      display: flex;
+      gap: 1rem;
+      font-size: clamp(1.055rem, 1.0215rem + 0.1427vw, 1.15rem);
+
+      .schedule-btn {
+        padding: 0.5rem 1rem;
+        letter-spacing: 1px;
+        border-radius: 0.3rem;
+
+        &:hover {
+          background-color: hsl(0, 100%, 68%, 0.8);
+        }
+      }
+
+      p {
+        align-self: center;
+        letter-spacing: 0.175rem;
+      }
+    }
+  }
+}
+
+@include md {
+  body {
+    @include center;
+
+    &::before {
+      height: 55%;
+    }
+
+    header {
+      justify-content: center;
+      flex-direction: row;
+
+      .col-1 {
+        align-self: center;
+        margin-inline: 1.6rem 0;
+
+        .paragraph {
+          margin-top: 0.5rem;
+        }
+
+        .schedule__container {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@include mid-lp {
+  .col-1 {
+    .heading {
+      width: min(100% - 4rem, 40rem);
+    }
+  }
+}
+
+@include mid-lg {
+  header {
+    width: min(100% - 0rem, 83rem);
+    margin-inline: auto 0;
+
+    .col-1 {
+      .header__texts {
+        .schedule__container {
+          .schedule-btn {
+            padding: 1rem 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include lg {
+  .col-1 {
+    padding-inline: 1.5rem 0;
+    margin-inline: 0;
+    margin-block-end: 3rem;
+
+    .header__texts {
+      margin-block-end: 0;
+    }
+  }
+}

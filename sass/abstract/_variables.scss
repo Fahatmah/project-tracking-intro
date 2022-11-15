@@ -1,0 +1,120 @@
+@use '../abstract/mixin';
+
+:root {
+  // primary
+  --pr-clr-100: hsl(0, 100%, 68%);
+
+  // neutral
+  --n-clr-100: hsl(207, 33%, 95%); // light grayish blue
+  --n-clr-200: hsl(231, 7%, 65%); // grayish blue
+  --n-clr-300: hsl(230, 11%, 40%); // dark grayish blue
+  --n-clr-400: hsl(230, 29%, 20%); // very dark blue
+
+  --fs-100: 1.125rem; // body's font size
+
+  --ff-barlow-condensed: 'Barlow Condensed', sans-serif; // headings, call to actions, navigation
+  --ff-barlow: 'Barlow', sans-serif; // body
+
+  --fw-reg: 400;
+  --fw-bold: 700;
+
+  --ff-body: var(--ff-barlow);
+  --fs-body: var(--fs-100);
+  --ff-heading: var(--ff-barlow-condensed);
+  --ff-cta: var(--ff-barlow-condensed);
+  --ff-nav: var(--ff-barlow-condensed);
+
+  --outline: 1px solid #333;
+
+  --width: min(100% - 2rem);
+}
+
+html {
+  position: relative;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+
+  &::before {
+    content: '';
+    width: 50%;
+    height: 60%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--n-clr-100);
+    border-bottom-left-radius: 3.5rem;
+    z-index: -1;
+  }
+}
+
+h1,
+a {
+  font-family: var(--ff-barlow-condensed);
+}
+
+header {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+footer {
+  position: absolute;
+  bottom: 0.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(0.8rem, 0.7296rem + 0.3005vw, 1rem);
+  text-align: center;
+  width: 100%;
+}
+
+// utilities
+.pr-clr-100 {
+  color: var(--pr-clr-100);
+}
+
+.bg-pr-clr-100 {
+  background-color: var(--pr-clr-100);
+}
+
+.n-clr-100 {
+  color: var(--n-clr-100);
+}
+
+.n-clr-200 {
+  color: var(--n-clr-200);
+}
+
+.n-clr-300 {
+  color: var(--n-clr-300);
+}
+
+.n-clr-400 {
+  color: var(--n-clr-400);
+}
+
+.bg-n-clr-100 {
+  background-color: var(--n-clr-100);
+}
+
+.bg-n-clr-400 {
+  background-color: var(--n-clr-400);
+}
+
+.ff-barlow {
+  font-family: var(--ff-barlow);
+}
+
+.ff-barlow-condensed {
+  font-family: var(--ff-barlow-condensed);
+}
+
+.fw-reg {
+  font-weight: var(--fw-reg);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}

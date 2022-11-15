@@ -1,0 +1,36 @@
+@use '../abstract' as *;
+
+.col-2 {
+  margin-block: 3.5rem 4.8rem;
+
+  .illustration__container {
+    position: relative;
+    width: min(100%, 60rem);
+    margin-inline: auto;
+    height: 100%;
+    overflow: hidden;
+
+    .image__container {
+      width: 138%;
+
+      .illustration {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include lg {
+  .col-2 {
+    .illustration__container {
+      width: 128%;
+      transform: translateX(-9.8rem);
+
+      .image__container {
+        .illustration {
+          width: 150%;
+        }
+      }
+    }
+  }
+}
